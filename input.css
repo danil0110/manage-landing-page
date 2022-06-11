@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url('../img/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 800px;
+  background-position: 90% -20%;
+}
+
+#cta {
+  background-image: url('../img/bg-simplify-section-desktop.svg');
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-position: 50px -50px;
+    background-size: 500px;
+  }
+
+  #cta {
+    background-image: url('../img/bg-simplify-section-mobile.svg');
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 18px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.hamburger-top {
+  top: 0;
+}
+
+.hamburger-middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-bottom {
+  bottom: 0;
+}
+
+.open {
+  transform: rotate(90deg) translateY(0);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(8px) translateX(4px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(-8px) translateX(4px);
+}
